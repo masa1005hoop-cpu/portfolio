@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>森永 大治｜Instagramフィード投稿制作 ポートフォリオ</title>
+<meta name="description" content="Instagramのフィード投稿（3〜7枚のカルーセル）を、企画から作ります。実案件と自主制作をまとめたポートフォリオです。">
+
+<!-- DMやチャットに貼ったときの見え方 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="森永 大治｜Instagramフィード投稿制作 ポートフォリオ">
+<meta property="og:description" content="1枚目で止まる投稿を、企画から作ります。実案件と自主制作をまとめました。">
+<meta property="og:image" content="https://masa1005hoop-cpu.github.io/portfolio/slides/p01.jpg">
+<meta property="og:url" content="https://masa1005hoop-cpu.github.io/portfolio/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%233E4A38'/%3E%3Ccircle cx='16' cy='16' r='7.5' fill='none' stroke='%23B4924F' stroke-width='1.6'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Shippori+Mincho:wght@600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* デッキの実物から採った色 */
+    --paper:      #e4ded4;  /* 机のクラフト地。スライドより一段濃くして、9枚を「置かれた実物」に見せる */
+    --paper-deep: #d6cfc3;
+    --ink:        #4a443c;
+    --taupe:      #7f776b;  /* デッキ本体の帯と同じ色 */
+    --gold:       #b4924f;  /* 1か所だけ使う */
+    --edge:       rgba(74,68,60,.14);
+    --sans:"Noto Sans JP",system-ui,-apple-system,"Hiragino Sans",sans-serif;
+    --mincho:"Shippori Mincho",serif;
+  }
+  *{box-sizing:border-box}
+  html{color-scheme:only light;-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:15px; line-height:1.85;
+    font-feature-settings:"palt";
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:0 20px}
+
+  /* ── デッキ：9枚を机に並べたプリントとして。
+     名乗りはデッキの1・2枚目（表紙とPROFILE）が担うので、ページ側には置かない。 ── */
+  .deck{padding:34px 0 8px}
+  .print{position:relative; margin:0 0 30px}
+  .print img{
+    display:block; width:100%; height:auto;
+    background:#efeae2;
+    border:1px solid rgba(74,68,60,.1);
+    box-shadow:0 1px 2px rgba(74,68,60,.10), 0 12px 26px -12px rgba(74,68,60,.34);
+  }
+  .print .no{
+    display:block; font-family:var(--mincho); font-weight:600;
+    font-size:12px; letter-spacing:.16em; color:var(--taupe);
+    text-align:right; margin:0 0 7px;
+  }
+  /* 広い画面では、通し番号を紙の外（余白）に置く */
+  @media (min-width:900px){
+    .print .no{
+      position:absolute; top:1px; left:-52px; width:38px;
+      text-align:right; margin:0; font-size:13px;
+    }
+    .print{margin-bottom:40px}
+  }
+
+  /* ── 締め：紙で欲しい人のための1行だけ ── */
+  .foot{
+    margin-top:16px; padding:26px 0 46px;
+    border-top:1px solid var(--edge); background:var(--paper);
+  }
+  .foot a{
+    display:inline-block; min-height:44px; line-height:44px;
+    font-size:13px; letter-spacing:.05em; color:var(--taupe);
+    text-decoration:none; border-bottom:1px solid var(--gold);
+  }
+  .foot a:hover{color:var(--ink)}
+  .foot a:focus-visible{outline:2px solid var(--gold); outline-offset:4px}
+
+  /* ── 動きは1種類だけ。読み込み時に一度だけ、机に置く動き ──
+     ⚠️スクロール連動にはしない。途中を飛ばして下まで行くと作品が消えたままになるため。 */
+  @media (prefers-reduced-motion:no-preference){
+    .wrap,.foot{animation:place .8s cubic-bezier(.2,.7,.3,1) both}
+    .foot{animation-delay:.1s}
+  }
+  @keyframes place{from{opacity:0; transform:translateY(12px)} to{opacity:1; transform:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <main class="deck">
+    <figure class="print"><span class="no">01</span><img src="slides/p01.jpg" width="1600" height="900" alt="表紙。Instagram投稿制作のポートフォリオ（photobiyori.studio）"></figure>
+    <figure class="print"><span class="no">02</span><img src="slides/p02.jpg" width="1600" height="900" loading="lazy" alt="プロフィール。花・装飾の仕事で15年、現場から管理職まで携わってきた経歴"></figure>
+    <figure class="print"><span class="no">03</span><img src="slides/p03.jpg" width="1600" height="900" loading="lazy" alt="実績。クラウドワークスでの評価と、納品した投稿について"></figure>
+    <figure class="print"><span class="no">04</span><img src="slides/p04.jpg" width="1600" height="900" loading="lazy" alt="制作物。やわらかい印象のトーンAと、静かで上質なトーンBの作り分け"></figure>
+    <figure class="print"><span class="no">05</span><img src="slides/p05.jpg" width="1600" height="900" loading="lazy" alt="WEB・LP制作。自主制作サンプル3本とその公開URL"></figure>
+    <figure class="print"><span class="no">06</span><img src="slides/p06.jpg" width="1600" height="900" loading="lazy" alt="対応できる仕事の範囲"></figure>
+    <figure class="print"><span class="no">07</span><img src="slides/p07.jpg" width="1600" height="900" loading="lazy" alt="制作の進め方。ヒアリングから構成、制作、納品までの流れ"></figure>
+    <figure class="print"><span class="no">08</span><img src="slides/p08.jpg" width="1600" height="900" loading="lazy" alt="連絡先"></figure>
+    <figure class="print"><span class="no">09</span><img src="slides/p09.jpg" width="1600" height="900" loading="lazy" alt="最後までご覧いただきありがとうございました"></figure>
+  </main>
+
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <a href="portfolio.pdf">同じ内容をPDFで保存する（2.7MB）</a>
+  </div>
+</footer>
+
+</body>
+</html>
